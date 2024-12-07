@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="hidden md:flex w-full flex-row justify-between px-8 h-[13vh]">
         <div className="flex flex-row items-center">
           <Link href="/">
-            <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer motion-preset-float ">{'</>'}GITCODE</div>
+            <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer ">{'</>'}GITCODE</div>
           </Link>
         </div>
         <div className="flex flex-row items-center">
