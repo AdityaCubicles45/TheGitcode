@@ -15,7 +15,6 @@ const PlatformCard: React.FC<{ text: string }> = ({ text }) => {
 
 const Footer = (props: Props) => {
   return (
-<<<<<<< HEAD
     <div className=''>
       <div className="flex justify-between items-center bg-[#B5F001] mb-10 mx-28  h-36 rounded-lg px-20 shadow-md">
 
@@ -28,27 +27,6 @@ const Footer = (props: Props) => {
         Join us
         <div className='bg-[#B5F001] -rotate-45 ml-4 rounded-full'>
           <span className="p-2 text-[24px] text-black">→</span>
-=======
-    <div className="">
-      <div className="flex justify-between items-center bg-[#B5F001] mb-6 mx-24  h-28 rounded-lg px-6 shadow-md">
-        <div className="text-black font-medium">
-          <p className="text-[32px]">Stay Updated with</p>
-          <p className="text-[30px] font-bold">GitCode-v3!</p>
-        </div>
-        <div className="">
-          <a
-            href="https://forms.gle/gJgwzeLBjrKXLGy77"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="flex items-center justify-center bg-black text-white text-[18px] font-medium w-[150px] h-[60px] rounded-full">
-              Join us
-              <div className="bg-[#B5F001] -rotate-45 ml-4 rounded-full">
-                <span className="p-2 text-[24px] text-black">→</span>
-              </div>
-            </button>
-          </a>
->>>>>>> 31a6e03 (link added gform)
         </div>
       </div>
 
