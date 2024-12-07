@@ -8,7 +8,7 @@ export default function Home() {
           Grow your impact, and be part of a thriving network where every contribution counts.
         </h1>
         <p className="self-start lg:w-[195px] lg:text-[42px] text-[28px] w-[30px]">Welcome to</p>
-        <p className="self-center text-center w-full lg:text-[200px] lg:-mt-[120px] pl-8 text-[40px] -mt-[40px]  px-4  motion-preset-seesaw ">
+        <p className="self-center font-trap text-center w-full lg:text-[175px] lg:-mt-[120px] pl-8 text-[40px] -mt-[40px]  px-4">
           {`{Gitcodĕ-V3}`}
         </p>
 
