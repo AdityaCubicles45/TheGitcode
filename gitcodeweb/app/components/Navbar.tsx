@@ -11,6 +11,7 @@ import { Award, Heart } from 'lucide-react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [userAddress, setUserAddress] = useState<string | null>(null); // State for user address
   const pathname = usePathname();
 
   const navItems = [
@@ -34,6 +35,28 @@ const Navbar = () => {
       icon: Heart, 
     },
   ];
+
+  // StarKey integration logic
+  const getStarKeyProvider = () => {
+    if ('starkey' in window) {
+      return window.starkey?.supra;
+    }
+    window.open('https://starkey.app/', '_blank');
+    return null;
+  };
+
+  const connectWallet = async () => {
+    const provider = getStarKeyProvider();
+    if (!provider) return;
+
+    try {
+      const accounts = await provider.connect();
+      setUserAddress(accounts[0]); // Store the connected user's address
+      console.log('Connected account:', accounts[0]);
+    } catch (err) {
+      console.error('Error connecting:', err);
+    }
+  };
 
   return (
     <nav className="w-full h-[13vh] relative">
@@ -61,7 +84,7 @@ const Navbar = () => {
                       {item.name}
                     </button>
                     {isDropdownOpen && (
-                      <Popover className="absolute top-full z-10 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border   border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5">
+                      <Popover className="absolute top-full z-10 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5">
                         <div className="p-4">
                           {products.map((product) => (
                             <div
@@ -71,7 +94,7 @@ const Navbar = () => {
                               <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 dark:bg-[#111] group-hover:bg-white dark:group-hover:bg-[#333]">
                                 <product.icon className="h-6 w-6 text-gray-600 dark:text-[#999] group-hover:-[#B3EF00]" aria-hidden="true" />
                               </div>
-                              <div className="flex-auto ">
+                              <div className="flex-auto">
                                 <Link href={product.href} className="block font-semibold hover:text-black">
                                   {product.name}
                                   <span className="absolute inset-0" />
@@ -98,9 +121,16 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center">
-          <button className="relative bg-lime-500 text-black font-mono px-6 py-3 border-2 border-black shadow-lg hover:translate-x-[2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] hover:shadow-[-8px_8px_0px_#000000] active:shadow-[0px_0px_0px_#000000] transition-transform duration-150 ease-in-out">
-            Connect Wallet
-          </button>
+          {userAddress ? (
+            <div className="text-[#B3EF00]">{userAddress}</div>
+          ) : (
+            <button
+              onClick={connectWallet}
+              className="relative bg-lime-500 text-black font-mono px-6 py-3 border-2 border-black shadow-lg hover:translate-x-[2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] hover:shadow-[-8px_8px_0px_#000000] active:shadow-[0px_0px_0px_#000000] transition-transform duration-150 ease-in-out"
+            >
+              Connect Wallet
+            </button>
+          )}
         </div>
       </div>
 
@@ -136,9 +166,16 @@ const Navbar = () => {
               </div>
             </Link>
           ))}
-          <button className="relative bg-lime-500 text-black font-mono px-6 py-3 border-2 border-black shadow-lg hover:translate-x-[2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] hover:shadow-[-8px_8px_0px_#000000] active:shadow-[0px_0px_0px_#000000] transition-transform duration-150 ease-in-out mt-8">
-            Connect Wallet
-          </button>
+          {userAddress ? (
+            <div className="text-[#B3EF00]">{userAddress}</div>
+          ) : (
+            <button
+              onClick={connectWallet}
+              className="relative bg-lime-500 text-black font-mono px-6 py-3 border-2 border-black shadow-lg hover:translate-x-[2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] hover:shadow-[-8px_8px_0px_#000000] active:shadow-[0px_0px_0px_#000000] transition-transform duration-150 ease-in-out mt-8"
+            >
+              Connect Wallet
+            </button>
+          )}
         </div>
       </div>
     </nav>
