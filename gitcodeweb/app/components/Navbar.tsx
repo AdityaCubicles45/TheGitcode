@@ -24,13 +24,13 @@ const Navbar = () => {
     {
       name: 'Contribute',
       description: 'Find bounties and contribute to projects',
-      href: '/bounties',
+      href: '/contribute',
       icon: Award, 
     },
     {
       name: 'Sponsor Projects',
       description: 'Support contributors by funding projects',
-      href: '/projects',
+      href: '/bounties',
       icon: Heart, 
     },
   ];
@@ -59,7 +59,6 @@ const Navbar = () => {
                       className={`flex items-center gap-x-1 ${pathname === item.href ? 'font-bold text-[#B3EF00]' : 'font-thin text-[#4B8B00]'}`}
                     >
                       {item.name}
-                      <ChevronDown className="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
                     </button>
                     {isDropdownOpen && (
                       <Popover className="absolute top-full z-10 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border   border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5">
