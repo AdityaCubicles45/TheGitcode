@@ -4,10 +4,8 @@ module Project {
     use std::vector;
     use std::option::{Option, some, none};
 
-    /// Maintainer address
     address public maintainer;
 
-    /// Struct for a Bounty
     struct Bounty has copy, drop, store {
         description: string,
         issue_id: u64,
@@ -17,18 +15,15 @@ module Project {
         complete: bool,
     }
 
-    /// Resource storing all bounties
     struct Bounties has key {
         bounties: vector<Bounty>,
     }
 
-    /// Resource storing contributor details
     struct Contributors has key {
         contributor_usernames: table::Table<address, string>,
         applied: table::Table<address, bool>,
     }
 
-    /// Initialize the module and set the maintainer
     public entry fun initialize(maintainer: address) {
         move_to<Bounties>(maintainer, Bounties { bounties: vector::empty<Bounty>() });
         move_to<Contributors>(maintainer, Contributors {
@@ -38,7 +33,6 @@ module Project {
         Self::maintainer = maintainer;
     }
 
-    /// Apply for a bounty
     public entry fun apply_bounty(account: &signer, github_username: string) {
         let addr = signer::address_of(account);
         let contributors = &mut borrow_global_mut<Contributors>(Self::maintainer);
@@ -53,7 +47,6 @@ module Project {
         table::add(&mut contributors.contributor_usernames, addr, github_username);
     }
 
-    /// Create a new bounty
     public entry fun create_bounty(
         account: &signer,
         description: string,
@@ -79,7 +72,6 @@ module Project {
         });
     }
 
-    /// Retrieve the number of bounties
     public fun get_bounties_count(): u64 {
         let bounties = borrow_global<Bounties>(Self::maintainer);
         vector::length(&bounties.bounties)
