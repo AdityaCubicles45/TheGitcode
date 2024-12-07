@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X} from 'lucide-react'; 
+import { Menu, X } from 'lucide-react'; 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Popover } from '@headlessui/react';
@@ -105,7 +105,7 @@ const Navbar = () => {
                       {item.name}
                     </button>
                     {isDropdownOpen && (
-                      <Popover className="absolute top-full z-10 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border   border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5">
+                      <Popover className="absolute top-full z-50 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5 opacity-100">
                         <div className="p-4">
                           {products.map((product) => (
                             <div key={product.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#B3EF00] dark:hover:bg-[#111] transition duration-150">
@@ -164,7 +164,7 @@ const Navbar = () => {
 
       {/* Full-screen Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 bg-black transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`md:hidden fixed inset-0 bg-black transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8 px-4">
           {navItems.map((item) => (
