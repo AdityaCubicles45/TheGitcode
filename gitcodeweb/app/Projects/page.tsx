@@ -1,12 +1,8 @@
-import React from 'react'
-
-
-const Projects = () => {
+export default function Projects() {
   return (
-    <div>page
-
-    </div>
-  )
+    <main className="min-h-screen p-8">
+      <h1 className="text-4xl font-bold">Projects</h1>
+      {/* Add your projects page content */}
+    </main>
+  );
 }
-
-export default Projects
