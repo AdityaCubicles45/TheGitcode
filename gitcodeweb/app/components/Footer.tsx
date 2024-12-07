@@ -45,7 +45,7 @@ const Footer = (props: Props) => {
                 <input
                   type="text"
                   placeholder="Your e-mail"
-                  className="w-[380px] h-[50px] bg-black text-[#B5F001] text-[18px] font-thin align-middle border-b-2 border-[#B5F001]"
+                  className="w-[380px] h-[50px] bg-black text-[#B5F001] text-[18px] font-thin align-middle border-b-2 border-[#B5F001] focus:outline-none focus:ring-0"
                 />
                 <Image src="/Arrow1.ico" alt="Arrow icon" width={44} height={2} className="mt-4 border-b-2 border-[#B5F001] pb-5 " />
               </div>
