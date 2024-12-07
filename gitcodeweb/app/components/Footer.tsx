@@ -16,7 +16,7 @@ const PlatformCard: React.FC<{ text: string }> = ({ text }) => {
 const Footer = (props: Props) => {
   return (
     <div>
-      <div className="flex justify-between items-center bg-[#B5F001] mb-10 mx-28 h-36 rounded-lg px-20 shadow-md">
+      <div className="flex justify-between items-center bg-[#B5F001] mb-10 mx-36 h-36 rounded-lg px-20 shadow-md">
         <div className="text-black font-medium">
           <p className="text-[32px]">Stay Updated with</p>
           <p className="text-[30px] font-bold">GitCode-v3!</p>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react'; 
+import { Menu, X} from 'lucide-react'; 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Popover } from '@headlessui/react';
@@ -10,7 +10,7 @@ import { Award, Heart } from 'lucide-react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
-  const [userAddress, setUserAddress] = useState<string | null>(null); // to store connected address
+  const [userAddress, setUserAddress] = useState<string | null>(null); 
   const pathname = usePathname();
 
   const navItems = [
@@ -24,13 +24,13 @@ const Navbar = () => {
     {
       name: 'Contribute',
       description: 'Find bounties and contribute to projects',
-      href: '/bounties',
+      href: '/Projects/Contribute',
       icon: Award, 
     },
     {
       name: 'Sponsor Projects',
       description: 'Support contributors by funding projects',
-      href: '/projects',
+      href: '/Projects/ponsers',
       icon: Heart, 
     },
   ];
@@ -86,7 +86,7 @@ const Navbar = () => {
   return (
     <nav className="w-full h-[13vh] relative">
       {/* Desktop View */}
-      <div className="hidden md:flex w-full flex-row justify-between px-8 h-[13vh]">
+      <div className="hidden md:flex w-full flex-row border-b-2 border-[#B3EF00] justify-between px-8 h-[13vh]">
         <div className="flex flex-row items-center">
           <Link href="/">
             <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer motion-preset-float ">{'</>'}GITCODE</div>
@@ -103,7 +103,6 @@ const Navbar = () => {
                       className={`flex items-center gap-x-1 ${pathname === item.href ? 'font-bold text-[#B3EF00]' : 'font-thin text-[#4B8B00]'}`}
                     >
                       {item.name}
-                      <ChevronDown className="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
                     </button>
                     {isDropdownOpen && (
                       <Popover className="absolute top-full z-10 mt-1 w-[390px] rounded-2xl bg-black dark:bg-black border   border-[#B3EF00] shadow-lg ring-1 ring-gray-900/5">
