@@ -1,40 +1,37 @@
 import { Heart } from "lucide-react";
 import Spline from '@splinetool/react-spline/next';
-
-// import HI from "./components/hi";
-
+import Splinebot from "./Splinebot";
 export default function Home() { 
   return (
-    <main className="min-h-screen text-[#B5F004] flex flex-col items-center m-16 gap-12">
-      <div className="flex flex-col  w-full max-w-[1239px] h-[314px]">
-        <h1 className="self-end lg:w-[400px] lg:text-[18px] text-end text-[12px] w-[200px]  ">
+    <main className="min-h-screen text-[#B5F004] flex flex-col items-center m-16 gap-12 relative">
+      {/* Background Spline Model */}
+      <div className="absolute inset-0 z-0 flex justify-center align-middle mt-[70px] mr-[50px]">
+      <Splinebot />
+            </div>
+
+      {/* Content on top of the background */}
+      <div className="flex flex-col w-full max-w-[1239px] h-[314px] z-10 relative">
+        <h1 className="self-end lg:w-[400px] lg:text-[18px] text-end text-[12px] w-[200px]">
           Grow your impact, and be part of a thriving network where every contribution counts.
         </h1>
         <p className="self-start lg:w-[195px] lg:text-[42px] font-trap text-[28px] w-[30px]">Welcome to</p>
-        <p className="self-center font-trap text-center w-full lg:text-[175px] lg:-mt-[120px] pl-8 text-[40px] -mt-[40px]  px-4">
-          {`{Gitcodĕ-V3}`}
-        </p>
+        <pre className="self-center font-trap text-center w-full lg:text-[175px] lg:-mt-[120px] pl-8 text-[40px] -mt-[40px] px-4">
+          {`{Gitc    dĕ-V3}`}
+        </pre>
+      </div>
 
-      </div>
-      <div className=" bg-red-400">
-        
-            <Spline scene="https://prod.spline.design/6zqR6qiVBWt8MU1Y/scene.splinecode" />
-            
-        
-      </div>
-      <div className="flex flex-col gap-6 " >
+      {/* Bottom Section */}
+      <div className="flex flex-col gap-6 z-10 relative">
         <p className="text-[#B5F001] text-center">Coming Soon...</p>
-        <div className="flex flex-row gap-8" >
+        <div className="flex flex-row gap-8">
           <button className="w-[124px] h-[50px] bg-[#B5F001] text-black font-medium flex items-center justify-center gap-2">
-            <Heart size={24} className="" /> Sponser
-            </button>
-            <button className="w-[124px] h-[50px] border-4 border-[#B5F001]">
+            <Heart size={24} /> Sponser
+          </button>
+          <button className="w-[124px] h-[50px] border-4 border-[#B5F001]">
             Contribute
-            </button>
-
+          </button>
         </div>
       </div>
-      
     </main>
   );
 }
