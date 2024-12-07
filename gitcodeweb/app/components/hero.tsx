@@ -37,7 +37,7 @@ export default function Home() {
         <p className="text-[#B5F001] text-center">Coming Soon...</p>
         <div className="flex flex-row gap-8">
           <button className="w-[124px] h-[50px] bg-[#B5F001] text-black font-medium flex items-center justify-center gap-2">
-            <Heart size={24} /> Sponser
+            <Heart size={24} /> Sponsor
           </button>
           <button className="w-[124px] h-[50px] border-4 border-[#B5F001]">
             Contribute
