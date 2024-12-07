@@ -86,7 +86,7 @@ const Navbar = () => {
   return (
     <nav className="w-full h-[13vh] relative">
       {/* Desktop View */}
-      <div className="hidden md:flex w-full flex-row border-b-2 border-[#B3EF00] justify-between px-8 h-[13vh]">
+      <div className="hidden md:flex w-full flex-row border-b border-[#B3EF00] justify-between px-8 h-[13vh]">
         <div className="flex flex-row items-center">
           <Link href="/">
             <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer motion-preset-float ">{'</>'}GITCODE</div>

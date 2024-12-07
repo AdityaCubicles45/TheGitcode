@@ -1,6 +1,6 @@
 import React from "react";
 
-const Claim: React.FC = () => {
+const Contribute: React.FC = () => {
   const cards = Array(8).fill({
     title: "Slack",
     description: "add a feature of night mode",
@@ -52,4 +52,4 @@ const Claim: React.FC = () => {
   );
 };
 
-export default Claim;
+export default Contribute;
