@@ -3,18 +3,12 @@
 import React, {useEffect, useState} from "react";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card";
 
-import {Button} from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import {Badge} from "@/components/ui/badge";
 import {copyToClipBoard, shortenAddress} from "@/lib/utils";
 import {ethers} from "ethers";
-import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {ISupraTransaction} from "@/lib/types";
-import {BCS, TxnBuilderTypes} from "aptos";
-import Link from "next/link";
-import {Textarea} from "@/components/ui/textarea"
+import { ISupraTransaction } from "../../lib/types";
+import {BCS} from "aptos";
 import nacl from "tweetnacl";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 

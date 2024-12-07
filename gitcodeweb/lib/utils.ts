@@ -7,9 +7,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-<<<<<<< HEAD
-// #endregion Functions (1)
-=======
 export const shortenAddress = (
   address: string,
   prefixLength: number = 6,
@@ -29,4 +26,3 @@ export const shortenAddress = (
 export const copyToClipBoard = (address: string) => {
   void navigator.clipboard.writeText(address);
 };
->>>>>>> 13f909d (Wallet Integration done)
