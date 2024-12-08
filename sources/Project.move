@@ -3,8 +3,7 @@ module Project {
     use std::string;
     use std::vector;
     use std::option::{Option, some, none};
-
-    address public maintainer;
+    use std::table;
 
     struct Bounty has copy, drop, store {
         description: string,
@@ -16,6 +15,7 @@ module Project {
     }
 
     struct Bounties has key {
+        maintainer: address,
         bounties: vector<Bounty>,
     }
 
@@ -24,18 +24,23 @@ module Project {
         applied: table::Table<address, bool>,
     }
 
-    public entry fun initialize(maintainer: address) {
-        move_to<Bounties>(maintainer, Bounties { bounties: vector::empty<Bounty>() });
+    public entry fun initialize(account: &signer) {
+        let maintainer = signer::address_of(account);
+
+        move_to<Bounties>(maintainer, Bounties {
+            maintainer,
+            bounties: vector::empty<Bounty>(),
+        });
+
         move_to<Contributors>(maintainer, Contributors {
             contributor_usernames: table::new<address, string>(),
             applied: table::new<address, bool>(),
         });
-        Self::maintainer = maintainer;
     }
 
     public entry fun apply_bounty(account: &signer, github_username: string) {
         let addr = signer::address_of(account);
-        let contributors = &mut borrow_global_mut<Contributors>(Self::maintainer);
+        let contributors = &mut borrow_global_mut<Contributors>(addr);
 
         assert!(
             !table::contains(&contributors.applied, addr),
@@ -55,12 +60,13 @@ module Project {
         repo: string,
         username: string
     ) {
+        let maintainer = signer::address_of(account);
+        let bounties = &mut borrow_global_mut<Bounties>(maintainer);
+
         assert!(
-            signer::address_of(account) == Self::maintainer,
+            bounties.maintainer == maintainer,
             "Restricted to maintainer"
         );
-
-        let bounties = &mut borrow_global_mut<Bounties>(Self::maintainer);
 
         vector::push_back(&mut bounties.bounties, Bounty {
             description,
@@ -72,8 +78,8 @@ module Project {
         });
     }
 
-    public fun get_bounties_count(): u64 {
-        let bounties = borrow_global<Bounties>(Self::maintainer);
+    public fun get_bounties_count(account: address): u64 {
+        let bounties = borrow_global<Bounties>(account);
         vector::length(&bounties.bounties)
     }
 }
