@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Popover } from '@headlessui/react';
 import { Award, Heart } from 'lucide-react'; 
-
+import Image from 'next/image';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
@@ -89,7 +89,7 @@ const Navbar = () => {
       <div className="hidden md:flex w-full flex-row border-b border-[#B3EF00] justify-between px-8 h-[13vh]">
         <div className="flex flex-row items-center">
           <Link href="/">
-            <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer motion-preset-float ">{'</>'}GITCODE</div>
+            <div className="text-2xl font-bold text-[#B3EF00] cursor-pointer motion-preset-float "><Image src="/logo.png" alt="" width={150} height={24} /></div>
           </Link>
         </div>
         <div className="flex flex-row items-center">
