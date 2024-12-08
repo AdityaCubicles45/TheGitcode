@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     name: 'base-org',
-    image: '/supra.jpg', // Corrected image path
+    image: '/base.png', // Corrected image path
     description: 'Base, Built on Superchain',
     stars: '79.3k',
     githubLink: 'https://github.com/base-org',
