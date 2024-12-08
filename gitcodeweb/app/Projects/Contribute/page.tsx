@@ -1,11 +1,17 @@
 import React from "react";
 
-const Contribute: React.FC = () => {
-  const cards = Array(8).fill({
-    title: "Slack",
-    description: "Add a feature of night mode",
-  });
+const cards = [
+  { title: "Slack", description: "Add a feature of night mode", imageUrl: "/slack.png" },
+  { title: "GitHub", description: "Improve performance for the mobile app", imageUrl: "/github.png" },
+  { title: "Discord", description: "Fix voice channel bugs", imageUrl: "/discord.png" },
+  { title: "Figma", description: "Add real-time collaboration feature", imageUrl: "/figma.png" },
+  { title: "Trello", description: "Improve task assignment UI", imageUrl: "/trello.png" },
+  { title: "Notion", description: "Add markdown support in documents", imageUrl: "/notion.png" },
+  { title: "Zoom", description: "Add support for large meetings", imageUrl: "/zoom.png" },
+  { title: "Slack", description: "Add a feature of night mode", imageUrl: "/slack.png" },
+];
 
+const Contribute: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 p-4 sm:p-6 md:p-8 flex flex-col items-center">
       <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-8">

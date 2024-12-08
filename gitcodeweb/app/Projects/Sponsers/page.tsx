@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     name: 'aptos-labs/aptos-core',
-    image: '/aptos.png', // Corrected image path
+    image: '/supra.jpg', // Corrected image path
     description: 'Aptos L1 Blockchain Core',
     stars: '6k',
     githubLink: 'https://github.com/aptos-labs/aptos-core',
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 3,
     name: 'ethers-io/ethers.js',
-    image: '/aptos.png', // Corrected image path
+    image: '/polygon.png', // Corrected image path
     description: 'Complete Ethereum library and wallet implementation in JavaScript.',
     stars: '6.7k',
     githubLink: 'https://github.com/ethers-io/ethers.js',
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 4,
     name: 'shadcn/ui',
-    image: '/aptos.png', // Corrected image path
+    image: '/starknet.png', // Corrected image path
     description: 'Beautifully designed components built with Radix UI and Tailwind CSS.',
     stars: '19k',
     githubLink: 'https://github.com/shadcn/ui',
@@ -51,7 +51,7 @@ const Sponsor = () => {
 
   return (
     <div className="flex h-full bg-gray-900">
-      <div className="flex flex-col flex-1 overflow-hidden">
+      <div className="flex flex-row flex-1 overflow-hidden">
         {/* Header Section */}
         {/* <header className="w-full">
           <div className="relative z-10 flex h-16 flex-shrink-0 border-b border-gray-200 dark:border-[#333] bg-gray-200 dark:bg-[#111] shadow-sm">
