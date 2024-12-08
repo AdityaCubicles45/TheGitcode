@@ -9,6 +9,7 @@ import { Award, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Exit from '@/public/logout.svg';
 
+const supra = '/supra.mp3';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,9 +59,9 @@ const Navbar = () => {
         const accounts = await provider.connect();
         setUserAddress(accounts[0]);
         console.log('Connected account:', accounts[0]);
-  
+    
         // Play connection sound
-        const audio = new Audio('/supra.mp3'); // Path to your audio file
+        const audio = new Audio('/supra.mp3'); // Correct path to the audio file in public folder
         audio.play().catch((err) => console.error('Audio playback failed:', err));
       } catch (err) {
         console.error('Error connecting to StarKey:', err);
@@ -69,7 +70,7 @@ const Navbar = () => {
       alert('StarKey is not installed. Please install StarKey wallet.');
     }
   };
-
+  
   // const connectWallet = async () => {
   //   const provider = getProvider();
   //   if (provider) {
