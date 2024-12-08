@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { HeartIcon, MagnifyingGlassIcon, StarIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, StarIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 
 // Array of projects with required properties (including image paths)

@@ -1,5 +1,4 @@
 import { Heart } from "lucide-react";
-import Spline from '@splinetool/react-spline/next';
 import Splinebot from "./Splinebot";
 export default function Home() { 
   return (
