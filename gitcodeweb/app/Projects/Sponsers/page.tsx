@@ -7,11 +7,11 @@ import Image from 'next/image';
 const projects = [
   {
     id: 1,
-    name: 'aptos-labs/aptos-core',
+    name: 'base-org',
     image: '/supra.jpg', // Corrected image path
-    description: 'Aptos L1 Blockchain Core',
-    stars: '6k',
-    githubLink: 'https://github.com/aptos-labs/aptos-core',
+    description: 'Base, Built on Superchain',
+    stars: '79.3k',
+    githubLink: 'https://github.com/base-org',
   },
   {
     id: 2,
