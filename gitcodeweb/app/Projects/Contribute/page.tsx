@@ -37,11 +37,11 @@ const Contribute: React.FC = () => {
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-300 rounded-full"></div>
-                <h3 className="text-lg sm:text-xl font-semibold ml-4 text-white">
+                <h3 className="text-lg sm:text-xl font-semibold ml-4 text-black">
                   {card.title}
                 </h3>
               </div>
-              <p className="text-lg sm:text-base md:text-lg text-white mt-2">
+              <p className="text-lg sm:text-base md:text-lg text-black mt-2">
                 {card.description}
               </p>
             </div>
