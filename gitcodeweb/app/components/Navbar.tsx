@@ -30,7 +30,7 @@ const Navbar = () => {
     {
       name: 'Sponsor Projects',
       description: 'Support contributors by funding projects',
-      href: '/Projects/ponsers',
+      href: '/Projects/Sponsers',
       icon: Heart, 
     },
   ];
