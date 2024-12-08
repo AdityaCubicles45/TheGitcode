@@ -9,6 +9,7 @@ import { Award, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Exit from '@/public/logout.svg';
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -49,6 +50,7 @@ const Navbar = () => {
   };
 
   // Connect wallet
+
   const connectWallet = async () => {
     const provider = getProvider();
     if (provider) {
@@ -56,6 +58,10 @@ const Navbar = () => {
         const accounts = await provider.connect();
         setUserAddress(accounts[0]);
         console.log('Connected account:', accounts[0]);
+  
+        // Play connection sound
+        const audio = new Audio('/supra.mp3'); // Path to your audio file
+        audio.play().catch((err) => console.error('Audio playback failed:', err));
       } catch (err) {
         console.error('Error connecting to StarKey:', err);
       }
@@ -63,6 +69,21 @@ const Navbar = () => {
       alert('StarKey is not installed. Please install StarKey wallet.');
     }
   };
+
+  // const connectWallet = async () => {
+  //   const provider = getProvider();
+  //   if (provider) {
+  //     try {
+  //       const accounts = await provider.connect();
+  //       setUserAddress(accounts[0]);
+  //       console.log('Connected account:', accounts[0]);
+  //     } catch (err) {
+  //       console.error('Error connecting to StarKey:', err);
+  //     }
+  //   } else {
+  //     alert('StarKey is not installed. Please install StarKey wallet.');
+  //   }
+  // };
 
   // Disconnect wallet
   const disconnectWallet = () => {

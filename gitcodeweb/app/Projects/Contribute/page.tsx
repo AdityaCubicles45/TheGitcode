@@ -1,15 +1,18 @@
 import React from "react";
-
+import slack from "@/public/slack.png";
+import Image from "next/image";
+import Link from "next/link";
 const cards = [
-  { title: "Slack", description: "Add a feature of night mode", imageUrl: "/slack.png" },
-  { title: "GitHub", description: "Improve performance for the mobile app", imageUrl: "/github.png" },
-  { title: "Discord", description: "Fix voice channel bugs", imageUrl: "/discord.png" },
-  { title: "Figma", description: "Add real-time collaboration feature", imageUrl: "/figma.png" },
-  { title: "Trello", description: "Improve task assignment UI", imageUrl: "/trello.png" },
-  { title: "Notion", description: "Add markdown support in documents", imageUrl: "/notion.png" },
-  { title: "Zoom", description: "Add support for large meetings", imageUrl: "/zoom.png" },
-  { title: "Slack", description: "Add a feature of night mode", imageUrl: "/slack.png" },
+  { title: "Slack", description: "Implement a night mode for better usability in low-light conditions", imageUrl: "/slack.png", projectlink: "https://github.com/slack-go/slack" },
+  { title: "GitHub", description: "Optimize the mobile app for faster navigation and reduced load times", imageUrl: "/github.jpeg", projectlink: "https://github.com/github-tools/github" },
+  { title: "Discord", description: "Resolve issues affecting the stability of voice channels", imageUrl: "/discord.png", projectlink: "https://github.com/Comfy-Themes/Discord" },
+  { title: "Figma", description: "Introduce real-time collaboration for seamless team design work", imageUrl: "/figma.jpeg", projectlink: "https://github.com/figma/plugin-samples" },
+  { title: "Trello", description: "Enhance the user interface for task assignment to improve usability", imageUrl: "/trello.jpeg", projectlink: "https://github.com/rcdexta/react-trello" },
+  { title: "Notion", description: "Enable comprehensive markdown support in document editing", imageUrl: "/notion.png", projectlink: "https://github.com/tangly1024/NotionNext" },
+  { title: "Zoom", description: "Expand functionality to support hosting larger meetings efficiently", imageUrl: "/zoom.jpeg", projectlink: "https://github.com/jackmoore/zoom" },
+  { title: "Slack", description: "Enhance dark mode settings for an improved aesthetic and usability", imageUrl: "/slack.png", projectlink: "https://github.com/slack-go/slack" },
 ];
+
 
 const Contribute: React.FC = () => {
   return (
@@ -36,22 +39,27 @@ const Contribute: React.FC = () => {
           >
             <div>
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-300 rounded-full"></div>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
+                  <Image src={card.imageUrl} alt="" height={60} width={60} className="rounded-lg"/>
+                </div>
                 <h3 className="text-lg sm:text-xl font-semibold ml-4 text-black">
                   {card.title}
                 </h3>
               </div>
-              <p className="text-lg sm:text-base md:text-lg text-black mt-2">
+              <p className="text-md sm:text-base md:text-md text-black mt-2">
                 {card.description}
               </p>
             </div>
 
             <div className="mt-4">
+              <Link href={card.projectlink} target="_abhi">
               <button
                 className="relative w-full rounded-lg bg-lime-500 text-black font-mono px-4 py-2 sm:px-6 sm:py-3 border-2 border-black shadow-lg hover:translate-x-[2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] hover:shadow-[-8px_8px_0px_#000000] active:shadow-[0px_0px_0px_#000000] transition-transform duration-150 ease-in-out"
               >
                 View More
               </button>
+              </Link>
+              {/* <Image src={slack} alt="" height={10} width={10}/> */}
             </div>
           </div>
         ))}

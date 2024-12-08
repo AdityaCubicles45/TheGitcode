@@ -102,7 +102,7 @@ const Sponsor = () => {
                         <Image
                           src={project.image}
                           alt={project.name}
-                          className="object-contain w-full h-full p-8 bg-[#333] dark:bg-black"
+                          className="object-contain w-full h-full p-8 bg-[#ffff] dark:bg-black m-1"
                           width={400}
                           height={200}
                         />
