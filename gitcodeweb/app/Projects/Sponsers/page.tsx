@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     name: 'aptos-labs/aptos-core',
-    image: '/projects/aptos.png', // Corrected image path
+    image: '/aptos.png', // Corrected image path
     description: 'Aptos L1 Blockchain Core',
     stars: '6k',
     githubLink: 'https://github.com/aptos-labs/aptos-core',
@@ -16,7 +16,7 @@ const projects = [
   {
     id: 2,
     name: 'lensterxyz/lenster',
-    image: '/projects/aptos.png', // Corrected image path
+    image: '/aptos.png', // Corrected image path
     description: 'Lenster is a decentralized and permissionless social media app built with Lens Protocol 🌿',
     stars: '20.4k',
     githubLink: 'https://github.com/lensterxyz/lenster',
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 3,
     name: 'ethers-io/ethers.js',
-    image: '/projects/aptos.png', // Corrected image path
+    image: '/aptos.png', // Corrected image path
     description: 'Complete Ethereum library and wallet implementation in JavaScript.',
     stars: '6.7k',
     githubLink: 'https://github.com/ethers-io/ethers.js',
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 4,
     name: 'shadcn/ui',
-    image: '/projects/aptos.png', // Corrected image path
+    image: '/aptos.png', // Corrected image path
     description: 'Beautifully designed components built with Radix UI and Tailwind CSS.',
     stars: '19k',
     githubLink: 'https://github.com/shadcn/ui',
@@ -53,7 +53,7 @@ const Sponsor = () => {
     <div className="flex h-full bg-gray-900">
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Header Section */}
-        <header className="w-full">
+        {/* <header className="w-full">
           <div className="relative z-10 flex h-16 flex-shrink-0 border-b border-gray-200 dark:border-[#333] bg-gray-200 dark:bg-[#111] shadow-sm">
             <div className="flex justify-between flex-1 px-4 sm:px-6">
               <div className="flex flex-1">
@@ -79,7 +79,7 @@ const Sponsor = () => {
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
 
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto">
@@ -144,7 +144,7 @@ const Sponsor = () => {
         </main>
 
         {/* Sidebar with How It Works */}
-        <aside className="hidden w-96 overflow-y-auto border-l border-gray-200 dark:border-[#333] bg-gray-800 dark:bg-black p-8 lg:block">
+        <aside className="hidden w-96 overflow-y-auto border-l border-gray-200 dark:border-[#333] bg-gray-800 dark:bg-black p-8 lg:block  ">
           <h1 className="mb-6 text-lg font-semibold text-lime-400">How It Works</h1>
           <ul className="space-y-4">
             <li className="text-sm text-gray-500">Sponsor Projects: Add projects to your sponsor list.</li>
