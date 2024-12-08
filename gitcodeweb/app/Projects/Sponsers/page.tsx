@@ -8,34 +8,34 @@ const projects = [
   {
     id: 1,
     name: 'base-org',
-    image: '/base.jpg', 
+    image: '/base.png', 
     description: 'Base is bringing the world onchain to create a global economy that increases innovation, creativity, and freedom. Built on the Superchain.',
     stars: '79.3k',
     githubLink: 'https://github.com/base-org',
   },
   {
     id: 2,
-    name: 'lensterxyz/lenster',
-    image: '/aptos.png', // Corrected image path
-    description: 'Lenster is a decentralized and permissionless social media app built with Lens Protocol 🌿',
+    name: 'Aptos Labs - Aptos Core',
+    image: '/aptos.png', 
+    description: 'Aptos is a high-performance Layer 1 blockchain that aims to provide scalability, security, and reliability to decentralized applications',
     stars: '20.4k',
-    githubLink: 'https://github.com/lensterxyz/lenster',
+    githubLink: 'https://github.com/aptos-labs/aptos-core',
   },
   {
     id: 3,
-    name: 'ethers-io/ethers.js',
+    name: '0xPolygon/polygon-edge',
     image: '/polygon.png', // Corrected image path
-    description: 'Complete Ethereum library and wallet implementation in JavaScript.',
-    stars: '6.7k',
-    githubLink: 'https://github.com/ethers-io/ethers.js',
+    description: 'A Framework for Building Ethereum-compatible Blockchain Networks.',
+    stars: '9.7k',
+    githubLink: 'https://github.com/0xPolygon/polygon-edge',
   },
   {
     id: 4,
-    name: 'shadcn/ui',
-    image: '/starknet.png', // Corrected image path
-    description: 'Beautifully designed components built with Radix UI and Tailwind CSS.',
-    stars: '19k',
-    githubLink: 'https://github.com/shadcn/ui',
+    name: 'starknet-edu/starknetbook',
+    image: '/starknet.png', 
+    description: 'Mastering Starknet. By the Starknet community.',
+    stars: '29.2k',
+    githubLink: 'https://github.com/starknet-edu/starknetbook',
   },
 ];
 
