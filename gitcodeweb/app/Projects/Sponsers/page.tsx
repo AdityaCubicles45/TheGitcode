@@ -8,8 +8,8 @@ const projects = [
   {
     id: 1,
     name: 'base-org',
-    image: '/base.png', // Corrected image path
-    description: 'Base, Built on Superchain',
+    image: '/base.jpg', 
+    description: 'Base is bringing the world onchain to create a global economy that increases innovation, creativity, and freedom. Built on the Superchain.',
     stars: '79.3k',
     githubLink: 'https://github.com/base-org',
   },
