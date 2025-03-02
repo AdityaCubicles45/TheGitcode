@@ -7,15 +7,15 @@ import { Loader2 } from "lucide-react";
 import {copyToClipBoard, shortenAddress} from "@/lib/utils";
 import {ethers} from "ethers";
 import * as yup from "yup";
-import { ISupraTransaction } from "../../lib/types";
+import { ISupraTransaction } from "../../components/ui/select";
 import {BCS} from "aptos";
 import nacl from "tweetnacl";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 
 declare global {
     interface Window {
-        ethereum?: any;
-        starkey?: any;
+        ethereum?: ethers.Provider;
+        starkey?: ethers.Provider;
     }
 }
 
@@ -42,22 +42,17 @@ interface SignMessageResponse {
 }
 
 export default function SupraDAppPage() {
-    let supraProvider: any =
-        typeof window !== "undefined" && (window as any)?.starkey?.supra;
+    let supraProvider: ethers.Provider | undefined =
+        typeof window !== "undefined" ? (window as { starkey?: { supra?: ethers.Provider } })?.starkey?.supra : undefined;
 
     const [isExtensionInstalled, setIsExtensionInstalled] =
         useState<boolean>(!!supraProvider);
     const [accounts, setAccounts] = useState<string[]>([]);
-    const [networkData, setNetworkData] = useState<any>();
+    const [networkData, setNetworkData] = useState<{ chainId: number } | null>(null);
     const [selectedChainId, setSelectedChainId] = useState<string>("");
 
     const [balance, setBalance] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
-    const [rawTxLoading, setRawTxLoading] = useState<boolean>(false);
-    const [signMsgLoading, setSignMsgLoading] = useState<boolean>(false);
-    const [signMessage, setSignMessage] = useState<string>('');
-    const [signatureResp, setSignatureResp] = useState<SignMessageResponse | undefined>(undefined);
-    const [transactions, setTransactions] = useState<ISupraTransaction[]>([]);
 
     const form = useForm({
         resolver: yupResolver(formSchema),
